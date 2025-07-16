@@ -21,7 +21,7 @@ This method allows the model to effectively capture the impact of the nucleotide
 
 
 # Model
-I have read a [Research Paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC8285202/#B6) with the title of **Analysis of DNA Sequence Classification Using CNN and Hybrid Models**.
+I have read a [Research Paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC8285202/) with the title of **Analysis of DNA Sequence Classification Using CNN and Hybrid Models**.
 I have read the resrach paper where they compared different CNN moeels for accuracy in classification tasks. 
 
 After reading this I have come up with a new architecture of dual input CNN-LSTM structure to classify the DNA sequences.
