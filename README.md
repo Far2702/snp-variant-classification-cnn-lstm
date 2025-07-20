@@ -29,7 +29,8 @@ I have label encoded the DNA bases (A,T,G,C) and the label encoding takinto acco
 
 # Tech Stack
 * Deep Learning: Tensorflow, Keras, Functional 
-* Data Processing: pyfaidx, Numpy, Pandas
+* Data Processing: pyfaidx, Numpy, Pandas, Ensembl API
+
 
 
 
