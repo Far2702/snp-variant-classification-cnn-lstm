@@ -27,6 +27,21 @@ I have read the resrach paper where they compared different CNN moeels for accur
 After reading this I have come up with a new architecture of dual input CNN-LSTM structure to classify the DNA sequences.
 I have label encoded the DNA bases (A,T,G,C) and the label encoding takinto account the positional imformation of the bases too. Then the 1D-CNN filters will extract features from the 150bp sequences that I have created through feature engineering and the LSTM layers will learn Long Term Dependencies of the sequence.
 
+# Custom Interpretibility (Custom SmoothGrad)
+To better understand what the model has learned and which base positions influence predictions, I implemented a custom version of the SmoothGrad interpretability technique.
+SmoothGrad works by:
+* Adding small amounts of noise to the input sequence multiple times
+* Calculating the gradient of the model's output with respect to the input embedding for each noisy sample
+* And averaging these gradients to obtain a smoothed saliency map highlighting which positions in the sequence the model finds most important.
+
+In this project:
+* I applied SmoothGrad to the output of the **Embedding layer**, using TensorFlow’s **GradientTape**.
+* Separate saliency maps were generated for the Reference and Alternate sequences.
+* The resulting heatmaps reveal which base positions contribute most to the model’s decision,particularly helping us check whether the model focuses on the alternate allele position.
+
+![Importance Interpretibility](static/Screenshot%202025-07-26%20043026.png)
+Here in the image we can see that the importance for **Alternate Sequence** is maximum at nearly 75th base position and I have added the alternate SNP allele there only during **feature engineering**. So it is learning to campture important features and focusing on the correct location.
+
 # Tech Stack
 * Deep Learning: Tensorflow, Keras, Functional 
 * Data Processing: pyfaidx, Numpy, Pandas, Ensembl API
