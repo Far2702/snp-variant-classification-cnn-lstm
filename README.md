@@ -1,5 +1,4 @@
 # **Variant Classification of SNPs using a custom CNN-LSTM dual input architecture**
-Project is not complete yet.
 # Introduction
 Single Nucleotide Polymorphisms (SNPs) are the most common type of genetic variation among individuals and play a crucial role in disease susceptibility, drug response, and personalized medicine. Accurate classification of SNPs as benign or pathogenic is essential for genomic diagnostics and therapeutic decision-making.
 
