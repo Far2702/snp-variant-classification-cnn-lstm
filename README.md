@@ -44,7 +44,24 @@ Here in the image we can see that the importance for **Alternate Sequence** is m
 # Precision-Recall Curve
 I have used **Precision-Recall** Curve for **Threshold Tuning**, keeping in mind to balance the recall and preicison both sightly prioritising the Recall as False Negetives are more harmful than False Positives in case of Medical Machine Learning.
 
+**I have specifically not used ROC for threshold tuning because in case of imbalanced test data the ROC can be slighly misleading because due to leage number of True Negtives the FPR will be very low even though the number of False Positive is very high. So slightly increasing the FPR can also increase the number of False Positives very much.**
+
 ![Precision vs Threshold Plot](static/Screenshot%202025-07-26%20160939.png)
+
+In this plot we can see that the precision decreases with increase in threshold and we all can understand why because when we increase the threshold the **False Positive** decreases but also the **True Positive** decsreases and they does not chnge propotionately so it first increases then decreases.
+
+![Precision vs Recall Curve](static/Screenshot%202025-07-26%20161000.png)
+
+Here in the Precision vs Threshold curve we can see that the precision is maximum near the threshold of approx 0.7.
+
+But we need to prioritise Recall more than Precision as **False Negetives** are more costly than **False Positives**
+
+So I have plotted the Precision vs Recall curve and with the help of F1 score we can see that the best threshold for th best F1 score is 0.37.
+So at the threshold the Precision and Recall is balanced as it has the highest F1 acotre among all other Precision and Recall combinations.
+
+**And besides that we also have to increase the recall more so need to shift the threshod to somehwat less than 0.37 to increase the recall(as we can see fromt he recall vs threshold plot) but it also decreases preicison but we can excuse slight decrease in precision.**
+
+![Recall vs Threshold](static/Screenshot%202025-07-26%20161023.png)
 
 # Tech Stack
 * Deep Learning: Tensorflow, Keras, Functional 
