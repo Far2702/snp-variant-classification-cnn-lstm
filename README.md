@@ -1,4 +1,4 @@
-# **Variant Classification and Interpretability of SNPs using CNN-LSTM with Custom SmoothGrad on 1D Genomic Sequences**
+# **Variant Classification and Interpretability of SNPs using  Custom CNN-LSTM Architecture with Custom SmoothGrad on 1D Genomic Sequences**
 # Introduction
 Single Nucleotide Polymorphisms (SNPs) are the most common type of genetic variation among individuals and play a crucial role in disease susceptibility, drug response, and personalized medicine. Accurate classification of SNPs as benign or pathogenic is essential for genomic diagnostics and therapeutic decision-making.
 
@@ -35,11 +35,16 @@ SmoothGrad works by:
 
 In this project:
 * I applied SmoothGrad to the output of the **Embedding layer**, using TensorFlow’s **GradientTape**.
-* Separate saliency maps were generated for the Reference and Alternate sequences.
-* The resulting heatmaps reveal which base positions contribute most to the model’s decision,particularly helping us check whether the model focuses on the alternate allele position.
+* Separate saliency maps were generated for the *Reference* and *Alternate sequences*.
+* The resulting heatmaps revesal which base positions contribute most to the model’s decision,particularly helping us check whether the model focuses on the alternate allele position.
 
 ![Importance Interpretibility](static/Screenshot%202025-07-26%20043026.png)
 Here in the image we can see that the importance for **Alternate Sequence** is maximum at nearly 75th base position and I have added the alternate SNP allele there only during **feature engineering**. So it is learning to campture important features and focusing on the correct location.
+
+# Precision-Recall Curve
+I have used **Precision-Recall** Curve for **Threshold Tuning**, keeping in mind to balance the recall and preicison both sightly prioritising the Recall as False Negetives are more harmful than False Positives in case of Medical Machine Learning.
+
+![Precision vs Threshold Plot](static/Screenshot%202025-07-26%20160939.png)
 
 # Tech Stack
 * Deep Learning: Tensorflow, Keras, Functional 
