@@ -24,7 +24,7 @@ I have read a [Research Paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC8285202/
 I have read the resrach paper where they compared different CNN moeels for accuracy in classification tasks. 
 
 After reading this I have come up with a new architecture of dual input CNN-LSTM structure to classify the DNA sequences.
-I have label encoded the DNA bases (A,T,G,C) and the label encoding takinto account the positional imformation of the bases too. Then the 1D-CNN filters will extract features from the 150bp sequences that I have created through feature engineering and the LSTM layers will learn Long Term Dependencies of the sequence.
+I have label encoded the DNA bases (A,T,G,C) and the label encoding takinto account the positional imformation of the bases too. Then the 1D-CNN filters will extract features from the 150bp sequences that I have created through feature engineering and the LSTM captures dependencies between distant nucleotide positions, enabling the model to consider broader sequence context beyond local motifs extracted by CNN filters.
 
 # Custom Interpretibility (Custom SmoothGrad)
 To better understand what the model has learned and which base positions influence predictions, I implemented a custom version of the SmoothGrad interpretability technique.
